@@ -5,25 +5,33 @@ import re
 import asyncio
 from pyrogram import filters
 from pyrogram.enums import ChatMemberStatus
-from config import FORCE_SUB_CHANNEL, ADMINS
+from config import FORCE_SUB_CHANNEL, ADMINS, FORCE_SUB_CHANNELS
 from pyrogram.errors.exceptions.bad_request_400 import UserNotParticipant
 from pyrogram.errors import FloodWait
+from database.database import get_fsub, add_fsub
+from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 
-async def is_subscribed(filter, client, update):
-    if not FORCE_SUB_CHANNEL:
-        return True
-    user_id = update.from_user.id
-    if user_id in ADMINS:
-        return True
-    try:
-        member = await client.get_chat_member(chat_id = FORCE_SUB_CHANNEL, user_id = user_id)
-    except UserNotParticipant:
-        return False
 
-    if not member.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR, ChatMemberStatus.MEMBER]:
-        return False
-    else:
-        return True
+def force_sub(func):
+    """Force Sub decorator for handling force subscribe logic"""
+    async def decorator(client, message):
+        msg_text = "You are not subscribed to use this bot. Please send join request to below channel."
+        buttons = []
+        count = 1
+        for x in FORCE_SUB_CHANNELS:
+            user_ = await get_fsub(x[0], message.from_user.id)
+            if not user_:
+                buttons.append([InlineKeyboardButton(text=f"Channel {count}", url={x[1]})])
+                count += 1
+        if len(buttons) == 1:
+            reply_markup = InlineKeyboardMarkup(buttons)
+            return await message.reply_text(
+                text=msg_text,
+                reply_markup=reply_markup,
+                quote=True
+            )  
+        await func(client, message)
+    return decorator
 
 async def encode(string):
     string_bytes = string.encode("ascii")

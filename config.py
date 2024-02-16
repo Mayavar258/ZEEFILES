@@ -31,8 +31,6 @@ PORT = os.environ.get("PORT", "8080")
 DB_URI = os.environ.get("DATABASE_URL", "mongodb+srv://maya:maya@maya.kweokda.mongodb.net/?retryWrites=true&w=majority")
 DB_NAME = os.environ.get("DATABASE_NAME", "mayava")
 
-#force sub channel id, if you want enable force sub
-FORCE_SUB_CHANNEL = int(os.environ.get("FORCE_SUB_CHANNEL", "-1002037461526"))
 
 TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
 
@@ -64,6 +62,15 @@ ADMINS.append(OWNER_ID)
 ADMINS.append(849970787)
 
 LOG_FILE_NAME = "filesharingbot.txt"
+
+all_fsub = open("fsub.txt", "r").read().splitlines()
+FORCE_SUB_CHANNELS = []
+FORCE_SUB_CHANNEL_IDS = []
+for x in all_fsub:
+    if x.startswith("-"):
+        _id, link = x.split()
+        FORCE_SUB_CHANNELS.append([int(_id), link])
+        FORCE_SUB_CHANNELS.append(int(_id))
 
 logging.basicConfig(
     level=logging.INFO,

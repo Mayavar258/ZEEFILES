@@ -1,0 +1,3 @@
+####Seperate forcesub channels in each line in this format
+####chat_id, invite_link
+-1002035643894, https://t.me/+I5ahERfCKVYwMjQ1
