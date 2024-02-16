@@ -22,9 +22,9 @@ def force_sub(func):
                 buttons.append([InlineKeyboardButton(text=f"Channel {count}", url=x[1])])
                 count += 1
         if buttons:
-            buttons.append([[
+            buttons.append([
                    InlineKeyboardButton("🔒 Close", callback_data = "close")
-                ]])
+                ])
             reply_markup = InlineKeyboardMarkup(buttons)
             return await message.reply_text(
                 text=msg_text,

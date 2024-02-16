@@ -329,3 +329,141 @@ pymongo.errors.DuplicateKeyError: E11000 duplicate key error collection: mayava.
 
        
 Bot Successfully Started at 2024-02-16 17:54:19.794532
+[16-Feb-24 18:03:02 - ERROR] - pyrogram.dispatcher - 'list' object has no attribute 'write'
+Traceback (most recent call last):
+  File "C:\Users\Hp\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 252, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\Hp\AppData\Roaming\Python\Python311\site-packages\pyrogram\handlers\message_handler.py", line 150, in resolve_future_or_callback
+    await self.original_callback(client, message, *args)
+  File "c:\Users\Hp\Music\FileShare\helper_func.py", line 28, in decorator
+    reply_markup = InlineKeyboardMarkup(buttons)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hp\AppData\Roaming\Python\Python311\site-packages\pyrogram\types\messages_and_media\message.py", line 1300, in reply_text
+    return await self._client.send_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hp\AppData\Roaming\Python\Python311\site-packages\pyrogram\methods\messages\send_message.py", line 177, in send_message
+    reply_markup=await reply_markup.write(self) if reply_markup else None,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hp\AppData\Roaming\Python\Python311\site-packages\pyrogram\types\bots_and_keyboards\inline_keyboard_markup.py", line 63, in write
+    buttons.append(await b.write(client))
+                         ^^^^^^^
+AttributeError: 'list' object has no attribute 'write'
+[16-Feb-24 18:03:20 - ERROR] - pyrogram.dispatcher - 'list' object has no attribute 'write'
+Traceback (most recent call last):
+  File "C:\Users\Hp\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 252, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\Hp\AppData\Roaming\Python\Python311\site-packages\pyrogram\handlers\message_handler.py", line 150, in resolve_future_or_callback
+    await self.original_callback(client, message, *args)
+  File "c:\Users\Hp\Music\FileShare\helper_func.py", line 28, in decorator
+    reply_markup = InlineKeyboardMarkup(buttons)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hp\AppData\Roaming\Python\Python311\site-packages\pyrogram\types\messages_and_media\message.py", line 1300, in reply_text
+    return await self._client.send_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hp\AppData\Roaming\Python\Python311\site-packages\pyrogram\methods\messages\send_message.py", line 177, in send_message
+    reply_markup=await reply_markup.write(self) if reply_markup else None,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hp\AppData\Roaming\Python\Python311\site-packages\pyrogram\types\bots_and_keyboards\inline_keyboard_markup.py", line 63, in write
+    buttons.append(await b.write(client))
+                         ^^^^^^^
+AttributeError: 'list' object has no attribute 'write'
+[16-Feb-24 18:03:20 - ERROR] - pyrogram.dispatcher - 'list' object has no attribute 'write'
+Traceback (most recent call last):
+  File "C:\Users\Hp\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 252, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\Hp\AppData\Roaming\Python\Python311\site-packages\pyrogram\handlers\message_handler.py", line 150, in resolve_future_or_callback
+    await self.original_callback(client, message, *args)
+  File "c:\Users\Hp\Music\FileShare\helper_func.py", line 28, in decorator
+    reply_markup = InlineKeyboardMarkup(buttons)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hp\AppData\Roaming\Python\Python311\site-packages\pyrogram\types\messages_and_media\message.py", line 1300, in reply_text
+    return await self._client.send_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hp\AppData\Roaming\Python\Python311\site-packages\pyrogram\methods\messages\send_message.py", line 177, in send_message
+    reply_markup=await reply_markup.write(self) if reply_markup else None,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hp\AppData\Roaming\Python\Python311\site-packages\pyrogram\types\bots_and_keyboards\inline_keyboard_markup.py", line 63, in write
+    buttons.append(await b.write(client))
+                         ^^^^^^^
+AttributeError: 'list' object has no attribute 'write'
+[16-Feb-24 18:03:45 - ERROR] - pyrogram.dispatcher - 'list' object has no attribute 'write'
+Traceback (most recent call last):
+  File "C:\Users\Hp\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 252, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\Hp\AppData\Roaming\Python\Python311\site-packages\pyrogram\handlers\message_handler.py", line 150, in resolve_future_or_callback
+    await self.original_callback(client, message, *args)
+  File "c:\Users\Hp\Music\FileShare\helper_func.py", line 28, in decorator
+    reply_markup = InlineKeyboardMarkup(buttons)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hp\AppData\Roaming\Python\Python311\site-packages\pyrogram\types\messages_and_media\message.py", line 1300, in reply_text
+    return await self._client.send_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hp\AppData\Roaming\Python\Python311\site-packages\pyrogram\methods\messages\send_message.py", line 177, in send_message
+    reply_markup=await reply_markup.write(self) if reply_markup else None,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hp\AppData\Roaming\Python\Python311\site-packages\pyrogram\types\bots_and_keyboards\inline_keyboard_markup.py", line 63, in write
+    buttons.append(await b.write(client))
+                         ^^^^^^^
+AttributeError: 'list' object has no attribute 'write'
+[16-Feb-24 18:04:52 - ERROR] - pyrogram.dispatcher - 'list' object has no attribute 'write'
+Traceback (most recent call last):
+  File "C:\Users\Hp\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 252, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\Hp\AppData\Roaming\Python\Python311\site-packages\pyrogram\handlers\message_handler.py", line 150, in resolve_future_or_callback
+    await self.original_callback(client, message, *args)
+  File "c:\Users\Hp\Music\FileShare\helper_func.py", line 28, in decorator
+    reply_markup = InlineKeyboardMarkup(buttons)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hp\AppData\Roaming\Python\Python311\site-packages\pyrogram\types\messages_and_media\message.py", line 1300, in reply_text
+    return await self._client.send_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hp\AppData\Roaming\Python\Python311\site-packages\pyrogram\methods\messages\send_message.py", line 177, in send_message
+    reply_markup=await reply_markup.write(self) if reply_markup else None,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hp\AppData\Roaming\Python\Python311\site-packages\pyrogram\types\bots_and_keyboards\inline_keyboard_markup.py", line 63, in write
+    buttons.append(await b.write(client))
+                         ^^^^^^^
+AttributeError: 'list' object has no attribute 'write'
+[16-Feb-24 18:04:54 - ERROR] - pyrogram.dispatcher - 'list' object has no attribute 'write'
+Traceback (most recent call last):
+  File "C:\Users\Hp\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 252, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\Hp\AppData\Roaming\Python\Python311\site-packages\pyrogram\handlers\message_handler.py", line 150, in resolve_future_or_callback
+    await self.original_callback(client, message, *args)
+  File "c:\Users\Hp\Music\FileShare\helper_func.py", line 28, in decorator
+    reply_markup = InlineKeyboardMarkup(buttons)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hp\AppData\Roaming\Python\Python311\site-packages\pyrogram\types\messages_and_media\message.py", line 1300, in reply_text
+    return await self._client.send_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hp\AppData\Roaming\Python\Python311\site-packages\pyrogram\methods\messages\send_message.py", line 177, in send_message
+    reply_markup=await reply_markup.write(self) if reply_markup else None,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hp\AppData\Roaming\Python\Python311\site-packages\pyrogram\types\bots_and_keyboards\inline_keyboard_markup.py", line 63, in write
+    buttons.append(await b.write(client))
+                         ^^^^^^^
+AttributeError: 'list' object has no attribute 'write'
+[16-Feb-24 18:05:09 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[16-Feb-24 18:05:09 - INFO] - bot - Bot stopped.
+[16-Feb-24 18:06:20 - INFO] - bot - Bot Running..!
+
+       
+Bot Successfully Started at 2024-02-16 18:06:20.964062
+[16-Feb-24 18:06:29 - ERROR] - pyrogram.dispatcher - 'NoneType' object has no attribute 'id'
+Traceback (most recent call last):
+  File "C:\Users\Hp\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 252, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\Hp\AppData\Roaming\Python\Python311\site-packages\pyrogram\handlers\callback_query_handler.py", line 206, in resolve_future_or_callback
+    await self.original_callback(client, query, *args)
+  File "c:\Users\Hp\Music\FileShare\plugins\cbb.py", line 24, in cb_handler
+    await query.message.delete()
+  File "C:\Users\Hp\AppData\Roaming\Python\Python311\site-packages\pyrogram\types\messages_and_media\message.py", line 4237, in delete
+    chat_id=self.chat.id,
+            ^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'id'
+[16-Feb-24 18:06:35 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[16-Feb-24 18:06:36 - INFO] - bot - Bot stopped.
+[16-Feb-24 18:07:47 - INFO] - bot - Bot Running..!
+
+       
+Bot Successfully Started at 2024-02-16 18:07:47.428729
