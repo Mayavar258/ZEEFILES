@@ -68,9 +68,9 @@ FORCE_SUB_CHANNELS = []
 FORCE_SUB_CHANNEL_IDS = []
 for x in all_fsub:
     if x.startswith("-"):
-        _id, link = x.split()
+        _id, link = x.split(", ")
         FORCE_SUB_CHANNELS.append([int(_id), link])
-        FORCE_SUB_CHANNELS.append(int(_id))
+        FORCE_SUB_CHANNEL_IDS.append(int(_id))
 
 logging.basicConfig(
     level=logging.INFO,

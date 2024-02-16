@@ -23,7 +23,7 @@ def force_sub(func):
             if not user_:
                 buttons.append([InlineKeyboardButton(text=f"Channel {count}", url={x[1]})])
                 count += 1
-        if len(buttons) == 1:
+        if buttons:
             reply_markup = InlineKeyboardMarkup(buttons)
             return await message.reply_text(
                 text=msg_text,
@@ -35,16 +35,13 @@ def force_sub(func):
 
 async def encode(string):
     string_bytes = string.encode("ascii")
-    base64_bytes = base64.urlsafe_b64encode(string_bytes)
-    base64_string = (base64_bytes.decode("ascii")).strip("=")
-    return base64_string
+    return (base64.urlsafe_b64encode(string_bytes).decode("ascii")).strip("=")
 
 async def decode(base64_string):
     base64_string = base64_string.strip("=") # links generated before this commit will be having = sign, hence striping them to handle padding errors.
     base64_bytes = (base64_string + "=" * (-len(base64_string) % 4)).encode("ascii")
     string_bytes = base64.urlsafe_b64decode(base64_bytes) 
-    string = string_bytes.decode("ascii")
-    return string
+    return string_bytes.decode("ascii")
 
 async def get_messages(client, message_ids):
     messages = []
@@ -113,6 +110,3 @@ def get_readable_time(seconds: int) -> str:
     time_list.reverse()
     up_time += ":".join(time_list)
     return up_time
-
-
-subscribed = filters.create(is_subscribed)
