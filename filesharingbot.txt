@@ -467,3 +467,5 @@ AttributeError: 'NoneType' object has no attribute 'id'
 
        
 Bot Successfully Started at 2024-02-16 18:07:47.428729
+[16-Feb-24 18:12:31 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[16-Feb-24 18:12:31 - INFO] - bot - Bot stopped.
