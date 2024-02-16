@@ -1,21 +1,16 @@
 #(©)NKMDB 
-
-
-
-
-import os
+# (©) Jigarvarma2005
 import asyncio
 from pyrogram import Client, filters, __version__
 from pyrogram.enums import ParseMode
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from pyrogram.errors import FloodWait, UserIsBlocked, InputUserDeactivated
-
 from bot import Bot
-from config import ADMINS, FORCE_MSG, START_MSG, CUSTOM_CAPTION, DISABLE_CHANNEL_BUTTON, PROTECT_CONTENT, FORCE_SUB_CHANNEL_IDS
+from config import ADMINS, START_MSG, CUSTOM_CAPTION, DISABLE_CHANNEL_BUTTON, PROTECT_CONTENT, FORCE_SUB_CHANNEL_IDS
 from helper_func import force_sub, encode, decode, get_messages
 from database.database import add_user, del_user, full_userbase, present_user, add_fsub
 
-@Bot.on_chat_join_request(filter.chat(FORCE_SUB_CHANNEL_IDS))
+@Bot.on_chat_join_request(filters.chat(FORCE_SUB_CHANNEL_IDS))
 async def Join_requests_handler(_, message):
     await add_fsub(message.chat.id, message.from_user.id)
 

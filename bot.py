@@ -38,10 +38,8 @@ class Bot(Client):
             self.LOGGER(__name__).warning(f"Make Sure bot is Admin in DB Channel, and Double check the CHANNEL_ID Value, Current Value {CHANNEL_ID}")
             self.LOGGER(__name__).info("\nBot Stopped. Join https://t.me/NKMDB for support")
             sys.exit()
-
         self.set_parse_mode(ParseMode.HTML)
-        self.LOGGER(__name__).info(f"Bot Running..!\n\nCreated by \nhttps://t.me/NKMDB")
-        self.LOGGER(__name__).info(f""" \n\n       
+        self.LOGGER(__name__).info(f"""Bot Running..!\n\n       
 Bot Successfully Started at {datetime.now()}""")
         self.username = usr_bot_me.username
         #web-response

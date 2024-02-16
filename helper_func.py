@@ -1,15 +1,13 @@
 #(©)Codexbotz
+# (©) Jigarvarma2005
 
 import base64
 import re
 import asyncio
-from pyrogram import filters
-from pyrogram.enums import ChatMemberStatus
-from config import FORCE_SUB_CHANNEL, ADMINS, FORCE_SUB_CHANNELS
-from pyrogram.errors.exceptions.bad_request_400 import UserNotParticipant
+from config import FORCE_SUB_CHANNELS
 from pyrogram.errors import FloodWait
-from database.database import get_fsub, add_fsub
-from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
+from database.database import get_fsub
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 
 def force_sub(func):
@@ -21,9 +19,12 @@ def force_sub(func):
         for x in FORCE_SUB_CHANNELS:
             user_ = await get_fsub(x[0], message.from_user.id)
             if not user_:
-                buttons.append([InlineKeyboardButton(text=f"Channel {count}", url={x[1]})])
+                buttons.append([InlineKeyboardButton(text=f"Channel {count}", url=x[1])])
                 count += 1
         if buttons:
+            buttons.append([[
+                   InlineKeyboardButton("🔒 Close", callback_data = "close")
+                ]])
             reply_markup = InlineKeyboardMarkup(buttons)
             return await message.reply_text(
                 text=msg_text,

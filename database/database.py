@@ -1,26 +1,21 @@
 #(©)CodeXBotz
+# (©) Jigarvarma2005
 
-
-
-
-import pymongo, os
+import pymongo
 from config import DB_URI, DB_NAME, FORCE_SUB_CHANNELS
 
 
 dbclient = pymongo.MongoClient(DB_URI)
 database = dbclient[DB_NAME]
 
-
 user_data = database['users']
-fsubs = {}
+fsubs = {x[0]: database[str(x[0])] for x in FORCE_SUB_CHANNELS}
 
-for x in FORCE_SUB_CHANNELS:
-    fsubs[x[0]] = database[str(x[0])]
-
-
-async def add_fsub(user_id: int, channel_id: int):
-    fsubs[channel_id].insert_one({'_id': user_id})
-    return
+async def add_fsub(channel_id: int, user_id: int):
+    try:
+        fsubs[channel_id].insert_one({'_id': user_id})
+    except:
+        pass
 
 async def get_fsub(channel_id: int, user_id: int):
     found = fsubs[channel_id].find_one({'_id': user_id})
