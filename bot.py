@@ -7,7 +7,7 @@ from pyrogram.enums import ParseMode
 import sys
 from datetime import datetime
 
-from config import API_HASH, APP_ID, LOGGER, TG_BOT_TOKEN, TG_BOT_WORKERS, CHANNEL_ID, PORT
+from config import API_HASH, APP_ID, LOGGER, TG_BOT_TOKEN, TG_BOT_WORKERS, CHANNEL_ID, PORT, FORCE_SUB_CHANNELS
 
 
 class Bot(Client):
@@ -36,8 +36,14 @@ class Bot(Client):
         except Exception as e:
             self.LOGGER(__name__).warning(e)
             self.LOGGER(__name__).warning(f"Make Sure bot is Admin in DB Channel, and Double check the CHANNEL_ID Value, Current Value {CHANNEL_ID}")
-            self.LOGGER(__name__).info("\nBot Stopped. Join https://t.me/NKMDB for support")
+            self.LOGGER(__name__).info("\nBot Stopped.")
             sys.exit()
+        for fsub in FORCE_SUB_CHANNELS:
+            try:
+                await self.get_chat(fsub[0])
+            except Exception as e:
+                self.LOGGER(__name__).warning(f"Make Sure bot is added in {fsub[1]} Channel, and Double check the FORCE_SUB_CHANNELS Value, Current Value {fsub[0]} {fsub[1]}")
+                sys.exit()
         self.set_parse_mode(ParseMode.HTML)
         self.LOGGER(__name__).info(f"""Bot Running..!\n\n       
 Bot Successfully Started at {datetime.now()}""")
