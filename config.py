@@ -24,6 +24,9 @@ CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1002079130140"))
 #OWNER ID
 OWNER_ID = int(os.environ.get("OWNER_ID", "1006159057"))
 
+#Your log channel Id
+LOG_ID = int(os.environ.get("LOG_ID", "-1002134291959"))
+
 #Port
 PORT = os.environ.get("PORT", "8080")
 
@@ -32,7 +35,7 @@ DB_URI = os.environ.get("DATABASE_URL", "mongodb+srv://maya:maya@maya.kweokda.mo
 DB_NAME = os.environ.get("DATABASE_NAME", "mayava")
 
 
-TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
+TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "2"))
 
 #start message
 START_MSG = os.environ.get("START_MESSAGE", "Hello {first}\n\nI can store private files in Specified Channel and other users can access it from special link.")
