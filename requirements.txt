@@ -1,4 +1,5 @@
 pyrofork
 pymongo
+tgcrypto
 dnspython
 aiohttp
